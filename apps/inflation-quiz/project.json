@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/inflation-quiz/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/inflation-quiz",
+        "index": "apps/inflation-quiz/src/index.html",
+        "baseHref": "/",
+        "main": "apps/inflation-quiz/src/main.tsx",
+        "polyfills": "apps/inflation-quiz/src/polyfills.ts",
+        "tsConfig": "apps/inflation-quiz/tsconfig.app.json",
+        "assets": [
+          "apps/inflation-quiz/src/favicon.ico",
+          "apps/inflation-quiz/src/assets"
+        ],
+        "styles": ["apps/inflation-quiz/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/inflation-quiz/src/environments/environment.ts",
+              "with": "apps/inflation-quiz/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "inflation-quiz:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "inflation-quiz:build:development"
+        },
+        "production": {
+          "buildTarget": "inflation-quiz:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/inflation-quiz/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/inflation-quiz"],
+      "options": {
+        "jestConfig": "apps/inflation-quiz/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
