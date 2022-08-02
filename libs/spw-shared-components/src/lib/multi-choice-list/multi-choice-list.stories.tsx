@@ -32,6 +32,7 @@ const question = {
 export const Default = Template.bind({});
 Default.args = {...question};
 
+/*
 export const SelectedAnswer = Template.bind({});
 SelectedAnswer.args = {...question};
 SelectedAnswer.play = async ({ args, canvasElement }) => {
@@ -41,5 +42,5 @@ SelectedAnswer.play = async ({ args, canvasElement }) => {
   await userEvent.click(yesAnswer);
 
   //await waitFor(() => expect(yesAnswer.value).toHaveBeenCalled());
-};
+};*/
 

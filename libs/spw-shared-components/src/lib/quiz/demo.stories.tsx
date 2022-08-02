@@ -15,6 +15,8 @@ const Template: ComponentStory<typeof Demo> = () => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+/*
 Default.play = async ({ args, canvasElement }) => {
   const canvas = within(canvasElement);
 
@@ -23,7 +25,7 @@ Default.play = async ({ args, canvasElement }) => {
   await userEvent.click(canvas.getByRole('button'));
 
   //await waitFor(() => expect(args.onSubmit).toHaveBeenCalled());
-};
+};*/
 
 //const Submitted = Template.bind({});
 //Submitted.args = {};
