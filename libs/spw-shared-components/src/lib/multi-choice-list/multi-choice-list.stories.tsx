@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MultiChoiceList } from './multi-choice-list';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 import Quiz from '../quiz/quiz';
+import { expect } from '@storybook/jest';
 
 export default {
   component: MultiChoiceList,
@@ -32,7 +33,6 @@ const question = {
 export const Default = Template.bind({});
 Default.args = {...question};
 
-/*
 export const SelectedAnswer = Template.bind({});
 SelectedAnswer.args = {...question};
 SelectedAnswer.play = async ({ args, canvasElement }) => {
@@ -40,7 +40,7 @@ SelectedAnswer.play = async ({ args, canvasElement }) => {
 
   const yesAnswer = await canvas.getByTestId('yes');
   await userEvent.click(yesAnswer);
-
-  //await waitFor(() => expect(yesAnswer.value).toHaveBeenCalled());
-};*/
+  const answer = await canvas.getByText('Yes, I trust that the decisions I’ve made about money aims to ensure that my finances will support my goals and ambitions throughout life.');
+  await waitFor(() => expect(answer).toBeInTheDocument());
+};
 
