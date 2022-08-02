@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "inflation-quiz": "apps/inflation-quiz",
-    "inflation-quiz-e2e": "apps/inflation-quiz-e2e"
+    "inflation-quiz-e2e": "apps/inflation-quiz-e2e",
+    "spw-shared-components": "libs/spw-shared-components",
+    "spw-shared-components-e2e": "apps/spw-shared-components-e2e"
   }
 }
