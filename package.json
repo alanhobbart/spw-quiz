@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "build-storybook": "yarn nx run spw-shared-components:build-storybook",
-    "chromatic-spw-shared-ui": "npx chromatic --project-token=6f46b7c5efbe --autoAcceptChanges=main"
+    "chromatic-spw-shared-ui": "npx chromatic --project-token=6f46b7c5efbe"
   },
   "private": true,
   "dependencies": {

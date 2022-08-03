@@ -17,7 +17,7 @@ const question = {
   groupName: '‘financiallyConfidentAnswerGroup',
   question: 'Would you describe yourself as being ‘financially confident’ person?',
   answers: [{
-    text: 'Not at all. I feel uncomfortable talking about money and don’t have any sort of financial plan in place.',
+    text: 'No. I feel uncomfortable talking about money and don’t have any sort of financial plan in place.',
     value: 'no'
   },
   {
